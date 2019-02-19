@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Login from "@/components/index/Login";
+import Index from "@/components/index/Index";
+import StudentNavi from '@/components/student/StudentNavi'
 
 Vue.use(Router);
 
@@ -9,7 +10,7 @@ export default new Router({
     {
       path: '/',
       name: 'Index',
-      component: Login
+      component: StudentNavi
     }
   ]
 })

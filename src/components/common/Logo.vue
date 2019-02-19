@@ -1,5 +1,5 @@
 <template>
-  <div @click="goHome">
+  <div @click="goHome" style="margin: 0 auto; transform:translateY(50%);">
     <span class="logo">教学支持系统</span>
   </div>
 </template>
@@ -10,7 +10,7 @@
     methods: {
       goHome() {
         console.log("logo clicked!");
-        if (this.$store.getters.getUserType === '')
+        if (this.$store.getters.userType === '')
           this.$router.push("/")
       }
     }
@@ -19,10 +19,10 @@
 
 <style scoped>
     .logo {
-      margin: 5px;
+      margin: 0 auto;
       font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
-      font-size: 20px;
-      font-weight: 700;
+      font-size: 25px;
+      font-weight: 900;
 
     }
 </style>

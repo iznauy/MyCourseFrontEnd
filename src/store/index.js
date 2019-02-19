@@ -8,7 +8,7 @@ export default new Vuex.Store({
   state: {
     token: "",
     userType: "",
-    avatar: ""
+    avatar: "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1550566562163&di=c27a716e5ab0e56d3b76bea704fcefd0&imgtype=0&src=http%3A%2F%2Fhimg2.huanqiu.com%2Fattachment2010%2F2019%2F0217%2F20190217065504901.jpg"
   },
   modules: {
     signInState
@@ -39,6 +39,9 @@ export default new Vuex.Store({
     },
     setUserType(state, userType) {
       state.userType = userType;
+    },
+    setAvatar(state, avatar) {
+      state.avatar = avatar
     }
   },
   actions: {
@@ -49,6 +52,10 @@ export default new Vuex.Store({
     clearIdentification(context) {
       context.commit('setToken', '');
       context.commit('setUserType', '');
+      context.commit('setAvatar', '');
+    },
+    updateAvatar(context, avatar) {
+      context.commit('setAvatar', avatar)
     }
   }
 

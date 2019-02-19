@@ -43,4 +43,13 @@ export function validation(email, userType, code, callback, errorCallback) {
   
 }
 
+export function getOwnAvatar(token, callback, errorCallback) {
+  window.axios.get(getUrl("ownAvatar"), {
+    headers: {
+      token: token
+    }
+  }).then(callback)
+    .catch(errorCallback)
+}
+
 

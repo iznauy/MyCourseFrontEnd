@@ -8,7 +8,7 @@
 </template>
 
 <script>
-  import Navi from './Navi';
+  import Navi from '../common/Navi';
   import LoginPanel from './LoginPanel'
   import RegisterPanel from './RegisterPanel'
   import ValidationPanel from './ValidationPanel'
@@ -19,7 +19,6 @@
       Navi, LoginPanel, RegisterPanel, ValidationPanel
     },
     methods: {
-
     }
 
   }

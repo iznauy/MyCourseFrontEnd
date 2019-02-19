@@ -1,13 +1,10 @@
 <template>
-  <div>
-    <img class="avatar" :src="path" />
-  </div>
+  <img class="avatar" :src="$store.getters['avatar']">
 </template>
 
 <script>
   export default {
     name: "Avatar",
-    props: ['path']
   }
 </script>
 
@@ -16,5 +13,6 @@
     width: 30px;
     height: 30px;
     border-radius: 3px;
+    display: inline;
   }
 </style>

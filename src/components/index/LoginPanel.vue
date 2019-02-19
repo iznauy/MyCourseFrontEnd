@@ -28,7 +28,7 @@
 
 <script>
 
-  import {login} from "../../api/user";
+  import {login, getOwnAvatar} from "../../api/user";
 
   export default {
 
@@ -48,7 +48,13 @@
               token: res.data.token,
               userType: this.userType
             });
-            console.log("state change")
+            console.log("state change");
+            getOwnAvatar(this.$store.getters.token,
+              re => {
+                console.log(re);
+                this.$store.dispatch("updateAvatar", re.data.avatar)
+              }
+            )
           },
           error => {
             this.$alert(error.response.data.message, "", {
