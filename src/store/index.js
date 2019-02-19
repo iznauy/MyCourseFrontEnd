@@ -1,6 +1,5 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import signInState from './modules/indexState'
 
 
 Vue.use(Vuex);
@@ -11,7 +10,7 @@ export default new Vuex.Store({
     avatar: "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1550566562163&di=c27a716e5ab0e56d3b76bea704fcefd0&imgtype=0&src=http%3A%2F%2Fhimg2.huanqiu.com%2Fattachment2010%2F2019%2F0217%2F20190217065504901.jpg"
   },
   modules: {
-    signInState
+
   },
   getters: {
     token(state) {

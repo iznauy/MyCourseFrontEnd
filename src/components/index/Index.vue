@@ -1,9 +1,7 @@
 <template>
   <div>
     <navi></navi>
-    <login-panel v-if="$store.getters['signInState/isLogin']"></login-panel>
-    <register-panel v-if="$store.getters['signInState/isRegister']"></register-panel>
-    <validation-panel v-if="$store.getters['signInState/isValidation']"></validation-panel>
+    <router-view></router-view>
   </div>
 </template>
 
@@ -14,7 +12,7 @@
   import ValidationPanel from './ValidationPanel'
 
   export default {
-    name: 'Login',
+    name: 'Index',
     components: {
       Navi, LoginPanel, RegisterPanel, ValidationPanel
     },
