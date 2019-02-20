@@ -98,10 +98,10 @@
 
       },
       toLogin() {
-        this.$store.dispatch("signInState/toLogin")
+        this.$router.push('/index/login')
       },
       toValidation() {
-        this.$store.dispatch("signInState/toValidation")
+        this.$router.push('/index/validation')
       }
     }
   }

@@ -16,6 +16,9 @@
       <el-form-item>
         <el-button type="primary" @click="login">登录</el-button>
       </el-form-item>
+      <el-form-item>
+        <el-button type="success" @click="quickLogin">快捷登录</el-button>
+      </el-form-item>
       <el-row>
         <el-button class="signUp-button" type="text" @click="toSignUp">没有账号？</el-button>
       </el-row>
@@ -41,6 +44,10 @@
       }
     },
     methods: {
+      quickLogin() {
+        this.email = "161250220@smail.nju.edu.cn";
+        this.password = "iznauy";
+      },
       login() {
         login(this.email, this.password, this.userType,
           res => {
@@ -48,7 +55,9 @@
               token: res.data.token,
               userType: this.userType
             });
-            console.log("state change");
+
+            this.$router.push("/" + this.userType)
+
             getOwnAvatar(this.$store.getters.token,
               re => {
                 console.log(re);
@@ -64,10 +73,10 @@
         )
       },
       toSignUp() {
-        this.$store.dispatch("signInState/toRegister")
+        this.$router.push('/index/register')
       },
       toValidation() {
-        this.$store.dispatch("signInState/toValidation")
+        this.$router.push('/index/validation')
       }
     }
   }

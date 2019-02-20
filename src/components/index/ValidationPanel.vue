@@ -84,8 +84,12 @@
         this.$refs['validationForm'].validate((valid) => {
           if (valid) {
             validation(this.validationForm.email, this.validationForm.userType, this.validationForm.code,
-              () => {
-                console.log("记录token等信息，转到正常使用界面")
+              res => {
+                this.$store.dispatch("upIdentification", {
+                  token: res.data.token,
+                  userType: this.validationForm.userType
+              });
+                this.$router.push("/" + this.validationForm.userType)
               },
               error => {
                 this.$alert(error.response.data.message, "", {
@@ -101,10 +105,10 @@
         })
       },
       toLogin() {
-        this.$store.dispatch("signInState/toLogin")
+        this.$router.push('/index/login')
       },
       toRegister() {
-        this.$store.dispatch("signInState/toValidation")
+        this.$router.push('/index/register')
       }
     }
   }

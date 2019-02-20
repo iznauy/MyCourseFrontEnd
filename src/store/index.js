@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-
+import vuexAlong from 'vuex-along';
 
 Vue.use(Vuex);
 export default new Vuex.Store({
@@ -56,6 +56,7 @@ export default new Vuex.Store({
     updateAvatar(context, avatar) {
       context.commit('setAvatar', avatar)
     }
-  }
+  },
+  plugins: [vuexAlong]
 
 })

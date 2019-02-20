@@ -1,11 +1,17 @@
 <template>
-    
+  <div>
+    <student-navi></student-navi>
+    <router-view></router-view>
+  </div>
 </template>
 
 <script>
-    export default {
-        name: "StudentMain"
-    }
+
+  import StudentNavi from "@/components/student/StudentNavi";
+  export default {
+    name: "StudentMain",
+    components: {StudentNavi}
+  }
 </script>
 
 <style scoped>

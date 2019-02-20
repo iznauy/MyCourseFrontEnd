@@ -5,6 +5,9 @@ import Login from "@/components/index/LoginPanel"
 import Register from "@/components/index/RegisterPanel"
 import Validation from "@/components/index/ValidationPanel"
 import StudentMain from "@/components/student/StudentMain"
+import StudentCourses from "@/components/student/StudentCourses";
+import StudentInfo from "@/components/student/StudentInfo";
+
 
 Vue.use(Router);
 
@@ -38,8 +41,26 @@ export default new Router({
       redirect: 'index'
     },
     {
-      path: '/worker',
-      component: StudentMain
+      path: '/student',
+      component: StudentMain,
+      children: [
+        {
+          path: '',
+          redirect: 'myCourse'
+        },
+        {
+          path: 'myCourse',
+          component: StudentCourses
+        },
+        {
+          path: 'allCourse',
+          component: StudentCourses
+        },
+        {
+          path: 'info',
+          component: StudentInfo
+        }
+      ]
     }
   ]
 })
