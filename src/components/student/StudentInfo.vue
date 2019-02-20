@@ -88,8 +88,6 @@
         this.editBasicInfo = !this.editBasicInfo;
       },
       commitInfoChange() {
-        console.log("编辑完成");
-        // 提交服务器
         changeStudentInfo(this.$store.getters.token, this.editInfo.username, this.editInfo.number,
           () => {
             this.changeEditInfoState();

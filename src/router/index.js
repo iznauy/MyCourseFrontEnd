@@ -5,8 +5,11 @@ import Login from "@/components/index/LoginPanel"
 import Register from "@/components/index/RegisterPanel"
 import Validation from "@/components/index/ValidationPanel"
 import StudentMain from "@/components/student/StudentMain"
-import StudentCourses from "@/components/student/StudentCourses";
+import StudentCourse from "@/components/student/StudentCourse";
 import StudentInfo from "@/components/student/StudentInfo";
+import TeacherMain from "@/components/teacher/TeacherMain";
+import Forum from "@/components/forum/Forum";
+import TeacherCourse from "@/components/teacher/TeacherCourse";
 
 
 Vue.use(Router);
@@ -50,15 +53,41 @@ export default new Router({
         },
         {
           path: 'myCourse',
-          component: StudentCourses
+          component: StudentCourse
         },
         {
           path: 'allCourse',
-          component: StudentCourses
+          component: StudentCourse
         },
         {
           path: 'info',
           component: StudentInfo
+        },
+        {
+          path: 'forum',
+          component: Forum
+        }
+      ]
+    },
+    {
+      path: '/teacher',
+      component: TeacherMain,
+      children: [
+        {
+          path: '',
+          redirect: 'myCourse'
+        },
+        {
+          path: 'myCourse',
+          component: TeacherCourse
+        },
+        {
+          path: 'info',
+          component: Forum
+        },
+        {
+          path: 'forum',
+          component: Forum
         }
       ]
     }

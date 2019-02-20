@@ -1,17 +1,16 @@
 <template>
   <div>
-    <student-navi></student-navi>
+    <teacher-navi></teacher-navi>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
-
-  import StudentNavi from "@/components/student/StudentNavi";
+  import TeacherNavi from "@/components/teacher/TeacherNavi"
   export default {
-    name: "StudentMain",
+    name: "TeacherMain",
     components: {
-      StudentNavi
+      TeacherNavi
     }
   }
 </script>
