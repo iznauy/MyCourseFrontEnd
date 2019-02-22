@@ -1,5 +1,5 @@
 <template>
-  <div @click="goHome" style="margin: 0 auto; transform:translateY(50%);">
+  <div @click="goHome" style="margin: 0 auto;">
     <span class="logo">教学支持系统</span>
   </div>
 </template>

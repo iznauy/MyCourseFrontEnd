@@ -1,5 +1,5 @@
 <template>
-  <el-header style="height: 50px; border: 1px solid #D4D4D4; border-radius: 7px;">
+  <el-header style="height: 50px; box-shadow: 0 1px 10px rgba(0,0,0,.1);">
     <el-row>
       <el-col :span="5" style="line-height: 40px">
         <div>

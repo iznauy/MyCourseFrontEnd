@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <el-form style="width: 300px" label-width="40px">
+  <div style="width: 200px; text-align: center; margin: 0 auto;">
+    <el-form style="width: 300px;" label-width="40px">
       <el-form-item label="邮箱">
         <el-input v-model="email"></el-input>
       </el-form-item>

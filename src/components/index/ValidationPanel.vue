@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="width: 400px; text-align: center; margin: 0 auto;">
     <el-form :model="validationForm" ref="validationForm" :rules="rules" style="width: 400px" label-width="80px">
       <el-form-item label="邮箱" prop="email">
         <el-input v-model="validationForm.email"></el-input>

@@ -5,11 +5,11 @@
         <logo></logo>
       </el-col>
       <el-col :span="8" :offset="12">
-        <el-menu :default-active="$route.path" mode="horizontal" @select="handleSelect">
-          <el-menu-item index="/student/allCourse">全部课程</el-menu-item>
+        <el-menu :default-active="$route.path" mode="horizontal" @select="handleSelect" class="float_right">
+          <el-menu-item index="/student/allCourse" >全部课程</el-menu-item>
           <el-menu-item index="/student/myCourse">我的课程</el-menu-item>
           <el-menu-item index="/student/forum">论坛区</el-menu-item>
-          <el-submenu index="/student">
+          <el-submenu index="/student" >
             <template slot="title"><avatar></avatar></template>
             <el-menu-item index="/student/info">个人信息</el-menu-item>
             <el-menu-item index="/student/logOff">注销账号</el-menu-item>
@@ -94,5 +94,8 @@
   .navi {
     height: 70px;
     width: auto;
+  }
+  .float_right {
+    float: right;
   }
 </style>
