@@ -1,6 +1,6 @@
 import {getUrl} from "@/api/tools/tool";
 
-export function getUncheckedCourses(token, callback, errorCallback) {
+export function uncheckedCourses(token, callback, errorCallback) {
   window.axios.get(getUrl("admin/course"), {
     headers: {
       token
@@ -9,7 +9,7 @@ export function getUncheckedCourses(token, callback, errorCallback) {
     .catch(errorCallback)
 }
 
-export function getUncheckedCourseReleases(token, callback, errorCallback) {
+export function uncheckedCourseReleases(token, callback, errorCallback) {
   window.axios.get(getUrl("admin/courseRelease"), {
     headers: {
       token

@@ -12,8 +12,9 @@ import Forum from "@/components/forum/Forum";
 import TeacherCourse from "@/components/teacher/course/Course";
 import TeacherInfo from "@/components/teacher/TeacherInfo";
 import AdminLogin from "@/components/admin/AdminLogin";
-import AdminCourse from "@/components/admin/AdminCourse";
+import AdminCourse from "@/components/admin/course/AdminCourse";
 import AdminMain from "@/components/admin/AdminMain";
+import AdminRelease from "@/components/admin/release/AdminRelease";
 
 
 Vue.use(Router);
@@ -113,7 +114,7 @@ export default new Router({
         },
         {
           path: 'checkRelease',
-          component: AdminCourse
+          component: AdminRelease
         },
         {
           path: 'statistics',

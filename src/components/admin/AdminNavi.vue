@@ -4,7 +4,7 @@
       <el-col :span="4">
         <logo></logo>
       </el-col>
-      <el-col :span="8" offset="12">
+      <el-col :span="8" :offset="12">
         <el-menu :default-active="$router.path" mode="horizontal" @select="handleSelect" class="float_right">
           <el-menu-item index="/admin/checkCourse">审批课程</el-menu-item>
           <el-menu-item index="/admin/checkRelease">审批发布</el-menu-item>

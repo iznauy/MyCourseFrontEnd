@@ -4,10 +4,7 @@
     <div v-if="courses !== null">
       <teacher-course-item v-for="(data, index) in courses" :key="index" v-bind="data"></teacher-course-item>
     </div>
-
    <course-create-table v-if="showCreateCourseTable" @close="changeCreateCourseVisible"></course-create-table>
-
-s
   </div>
 
 </template>
