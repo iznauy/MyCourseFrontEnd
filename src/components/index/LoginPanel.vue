@@ -45,8 +45,9 @@
     },
     methods: {
       quickLogin() {
-        this.email = "161250220@smail.nju.edu.cn";
-        this.password = "iznauy";
+        this.email = "zy05160516@126.com";
+        this.password = "iznauy.top";
+        this.userType = 'teacher'
       },
       login() {
         login(this.email, this.password, this.userType,

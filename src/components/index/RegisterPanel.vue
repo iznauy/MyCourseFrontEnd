@@ -82,6 +82,7 @@
               res => {
                 console.log("注册成功，转移到激活页面");
                 console.log(res)
+                this.$router.push('/index/validation')
               },
               error => {
                 this.$alert(error.response.data.message, "", {

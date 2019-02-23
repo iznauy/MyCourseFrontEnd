@@ -43,6 +43,10 @@
     },
     methods: {
       handleSelect(key, keyPath) {
+        if (keyPath.length === 1 || key === '/teacher/info')
+          this.$router.push(key);
+        else
+          this.logOutVisible = true;
 
       },
       logOut() {

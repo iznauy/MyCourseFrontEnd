@@ -33,6 +33,15 @@ export function getCourseReleases(token, courseId, callback, errorCallback) {
     .catch(errorCallback)
 }
 
+export function getAllReleases(token, callback, errorCallback) {
+  window.axios.get(getUrl("teacher/allRelease"), {
+    headers: {
+      token
+    }
+  }).then(callback)
+    .catch(errorCallback)
+}
+
 export function createCourseRelease(token, id, beginDate, endDate, classOrder, hasQuota, quota, callback, errorCallback) {
   const data = {id, beginDate, endDate, classOrder, hasQuota, quota}
   window.axios.post(getUrl("teacher/course/release"), {}, {
