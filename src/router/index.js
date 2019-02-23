@@ -12,6 +12,8 @@ import Forum from "@/components/forum/Forum";
 import TeacherCourse from "@/components/teacher/course/Course";
 import TeacherInfo from "@/components/teacher/TeacherInfo";
 import AdminLogin from "@/components/admin/AdminLogin";
+import AdminCourse from "@/components/admin/AdminCourse";
+import AdminMain from "@/components/admin/AdminMain";
 
 
 Vue.use(Router);
@@ -43,7 +45,7 @@ export default new Router({
     },
     {
       path: '',
-      redirect: 'index'
+      redirect: 'inside'
     },
     {
       path: '/student',
@@ -95,7 +97,29 @@ export default new Router({
     },
     {
       path: '/inside',
-      component: AdminLogin
+      component: AdminLogin,
+    },
+    {
+      path: '/admin',
+      component: AdminMain,
+      children: [
+        {
+          path: '',
+          redirect: 'checkCourse'
+        },
+        {
+          path: 'checkCourse',
+          component: AdminCourse
+        },
+        {
+          path: 'checkRelease',
+          component: AdminCourse
+        },
+        {
+          path: 'statistics',
+          component: AdminCourse
+        }
+      ]
     }
   ]
 })
