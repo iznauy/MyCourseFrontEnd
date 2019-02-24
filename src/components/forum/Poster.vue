@@ -1,11 +1,11 @@
 <template>
-    <p>Forum</p>
+  <p>PosterContent</p>
 </template>
 
 <script>
-    export default {
-        name: "Forum"
-    }
+  export default {
+    name: "Poster"
+  }
 </script>
 
 <style scoped>

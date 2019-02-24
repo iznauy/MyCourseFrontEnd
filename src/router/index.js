@@ -15,6 +15,8 @@ import AdminLogin from "@/components/admin/AdminLogin";
 import AdminCourse from "@/components/admin/course/AdminCourse";
 import AdminMain from "@/components/admin/AdminMain";
 import AdminRelease from "@/components/admin/release/AdminRelease";
+import ForumContent from "@/components/forum/ForumContent";
+import Poster from "@/components/forum/Poster";
 
 
 Vue.use(Router);
@@ -92,7 +94,7 @@ export default new Router({
         },
         {
           path: 'forum',
-          component: Forum
+          component: Forum,
         }
       ]
     },
@@ -121,6 +123,18 @@ export default new Router({
           component: AdminCourse
         }
       ]
+    },
+    {
+      path: "/forum",
+      component: Forum
+    },
+    {
+      path: "/forum/:id",
+      component: ForumContent
+    },
+    {
+      path: "/forum/:id/:postId",
+      component: Poster
     }
   ]
 })
