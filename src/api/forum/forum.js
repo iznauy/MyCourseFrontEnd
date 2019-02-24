@@ -1,7 +1,7 @@
 import {getUrl} from "@/api/tools/tool";
 
 export function loadAvailableForums(token, callback, errorCallback) {
-  window.axios.post(getUrl("/forum/available"), {}, {
+  window.axios.get(getUrl("/forum/available"),{
     headers: {
       token
     }
