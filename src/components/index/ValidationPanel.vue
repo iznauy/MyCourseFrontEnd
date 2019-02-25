@@ -1,7 +1,7 @@
 <template>
   <div class="panel">
     <h2>验证</h2>
-    <el-form :model="validationForm" ref="validationForm" :rules="rules" class="form" label-width="60px">
+    <el-form :model="validationForm" ref="validationForm" :rules="rules" class="form" label-width="80px">
       <el-form-item label="邮箱" prop="email">
         <el-input v-model="validationForm.email" size="small"></el-input>
       </el-form-item>
@@ -20,7 +20,7 @@
         </el-radio-group>
       </el-form-item>
       <el-form-item label-width="0px">
-        <el-button type="primary" @click="validateAccount">验证</el-button>
+        <el-button type="primary" @click="validateAccount" size="medium">验证</el-button>
       </el-form-item>
       <el-row>
         <el-button class="signUp-button" type="text" @click="toLogin">已有账号？</el-button>
@@ -63,7 +63,7 @@
             {required: true, message: '请输入邮箱', trigger: 'blur'}
           ],
           code: [
-            {min: 6, max: 6, message: '验证码的长度为6位', trigger: 'blur'}
+            {required: true, min: 6, max: 6, message: '验证码的长度为6位', trigger: 'blur'}
           ]
         }
       }
@@ -123,7 +123,7 @@
     margin: 100px auto;
   }
   .form {
-    width: 220px;
+    width: 240px;
     margin: 40px auto 0 auto;
   }
 

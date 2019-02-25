@@ -40,15 +40,20 @@
 
       </el-aside>
     </el-container>
+    <student-statistics></student-statistics>
   </div>
 </template>
 
 <script>
 
   import {getStudentInfo, changeStudentInfo} from "@/api/student/studentInfo";
+  import StudentStatistics from "@/components/student/StudentStatistics";
 
   export default {
     name: "StudentInfo",
+    components: {
+      StudentStatistics
+    },
     data() {
       return {
         basicInfo: {

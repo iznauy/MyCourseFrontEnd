@@ -1,7 +1,8 @@
 <template>
   <div>
     <teacher-navi></teacher-navi>
-    <router-view></router-view>
+    <div style="clear:both"></div>
+    <router-view style="width: 70%; margin: 30px auto;"></router-view>
   </div>
 </template>
 

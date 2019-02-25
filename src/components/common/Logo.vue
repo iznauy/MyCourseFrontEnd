@@ -1,28 +1,20 @@
 <template>
-  <div @click="goHome" style="margin: 0 auto;">
-    <span class="logo">教学支持系统</span>
-  </div>
+  <span class="logo">教学支持系统</span>
 </template>
 
 <script>
   export default {
-    name: "Logo",
-    methods: {
-      goHome() {
-        console.log("logo clicked!");
-        if (this.$store.getters.userType === '')
-          this.$router.push("/")
-      }
-    }
+    name: "Logo"
   }
 </script>
 
 <style scoped>
     .logo {
       margin: 0 auto;
-      font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
-      font-size: 25px;
-      font-weight: 900;
-
+      font-family: "Helvetica Neue", Helvetica, Arial,sans-serif;
+      font-size: 20px;
+      font-weight: 400;
+      color: #777;
+      text-shadow: 0 1px 0 #fff;
     }
 </style>

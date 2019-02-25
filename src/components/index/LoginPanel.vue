@@ -20,8 +20,9 @@
       <el-form-item>
         <el-button type="primary" @click="login" size="medium" >登录</el-button>
       </el-form-item>
-      <el-form-item v-if="false">
-        <el-button type="success" @click="quickLogin">快捷登录</el-button>
+      <el-form-item>
+        <el-button type="success" @click="teacherQuickLogin" size="medium">一键老师</el-button>
+        <el-button type="success" @click="studentQuickLogin" size="medium">一键学生</el-button>
       </el-form-item>
       <el-row>
         <el-button class="signUp-button" type="text" @click="toSignUp">没有账号？</el-button>
@@ -48,10 +49,17 @@
       }
     },
     methods: {
-      quickLogin() {
+      teacherQuickLogin() {
         this.email = "zy05160516@126.com";
         this.password = "iznauy.top";
-        this.userType = 'teacher'
+        this.userType = 'teacher';
+        this.login();
+      },
+      studentQuickLogin() {
+        this.email = "161250220@smail.nju.edu.cn";
+        this.password = "iznauy";
+        this.userType = 'student';
+        this.login();
       },
       login() {
         login(this.email, this.password, this.userType,

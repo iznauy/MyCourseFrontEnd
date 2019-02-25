@@ -1,22 +1,18 @@
 <template>
   <div class="navi">
-    <el-row>
-      <el-col :span="4">
-        <logo></logo>
-      </el-col>
-      <el-col :span="6" :offset="14">
-        <el-menu :default-active="$route.path" mode="horizontal" @select="handleSelect">
-          <el-menu-item index="/teacher/myCourse">我的课程</el-menu-item>
-          <el-menu-item index="/teacher/myRelease">课程发布</el-menu-item>
-          <el-menu-item index="/teacher/forum">论坛区</el-menu-item>
-          <el-submenu index="/teacher">
-            <template slot="title"><avatar></avatar></template>
-            <el-menu-item index="/teacher/info">个人信息</el-menu-item>
-            <el-menu-item index="/teacher/logOut">登出</el-menu-item>
-          </el-submenu>
-        </el-menu>
-      </el-col>
-    </el-row>
+    <el-menu
+      :default-active="$route.path"
+      mode="horizontal" @select="handleSelect"
+      class="float_right" style="position: relative; top: -2px;">
+      <el-menu-item index="/teacher/myCourse">我的课程</el-menu-item>
+      <el-menu-item index="/teacher/myRelease">课程发布</el-menu-item>
+      <el-menu-item index="/teacher/forum">论坛区</el-menu-item>
+      <el-submenu index="/teacher">
+        <template slot="title"><avatar></avatar></template>
+        <el-menu-item index="/teacher/info">个人信息</el-menu-item>
+        <el-menu-item index="/teacher/logOut">登出</el-menu-item>
+      </el-submenu>
+    </el-menu>
 
     <el-dialog title="提示" :visible.sync="logOutVisible" width="20%">
       <span>确定要登出？</span>
@@ -64,4 +60,7 @@
 
 <style scoped>
 
+  .float_right {
+    float: right;
+  }
 </style>

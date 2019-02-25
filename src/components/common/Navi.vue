@@ -8,7 +8,7 @@
       </el-col>
       <el-col :span="5" :offset="14" style="line-height: 35px; padding: 5px 0">
         <div>
-          <span>您尚未登录</span>
+          <span style="font-weight: 400">您尚未登录</span>
         </div>
       </el-col>
     </el-row>
