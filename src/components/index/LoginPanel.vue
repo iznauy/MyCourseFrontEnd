@@ -1,11 +1,12 @@
 <template>
-  <div style="width: 200px; text-align: center; margin: 0 auto;">
-    <el-form style="width: 300px;" label-width="40px">
+  <div class="panel">
+    <h2>登录</h2>
+    <el-form class="form" label-width="40px">
       <el-form-item label="邮箱">
-        <el-input v-model="email"></el-input>
+        <el-input v-model="email" size="small"></el-input>
       </el-form-item>
       <el-form-item label="密码">
-        <el-input v-model="password" type="password"></el-input>
+        <el-input v-model="password" type="password" size="small"></el-input>
       </el-form-item>
       <el-form-item label="类型">
         <el-radio-group v-model="userType">
@@ -13,10 +14,13 @@
           <el-radio label="teacher">老师</el-radio>
         </el-radio-group>
       </el-form-item>
+
+    </el-form>
+    <el-form>
       <el-form-item>
-        <el-button type="primary" @click="login">登录</el-button>
+        <el-button type="primary" @click="login" size="medium" >登录</el-button>
       </el-form-item>
-      <el-form-item>
+      <el-form-item v-if="false">
         <el-button type="success" @click="quickLogin">快捷登录</el-button>
       </el-form-item>
       <el-row>
@@ -83,3 +87,17 @@
   }
 
 </script>
+
+<style scoped>
+
+  .panel {
+    width: 300px;
+    text-align: center;
+    margin: 100px auto;
+  }
+  .form {
+    width: 200px;
+    margin: 50px auto 0 auto;
+  }
+
+</style>

@@ -1,7 +1,9 @@
 <template>
   <div>
     <navi></navi>
-    <router-view></router-view>
+    <transition name="slide-fade">
+      <router-view></router-view>
+    </transition>
   </div>
 </template>
 
@@ -22,3 +24,17 @@
   }
 
 </script>
+
+<style scoped>
+  .slide-fade-enter-active {
+    transition: all .5s ease-out;
+  }
+  .slide-fade-leave-active {
+    transition: all .5s ease-in;
+  }
+  .slide-fade-enter, .slide-fade-leave-to
+    /* .slide-fade-leave-active for below version 2.1.8 */ {
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+</style>

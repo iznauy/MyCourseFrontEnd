@@ -1,15 +1,16 @@
 <template>
-  <div style="width: 400px; text-align: center; margin: 0 auto;">
-    <el-form :model="validationForm" ref="validationForm" :rules="rules" style="width: 400px" label-width="80px">
+  <div class="panel">
+    <h2>验证</h2>
+    <el-form :model="validationForm" ref="validationForm" :rules="rules" class="form" label-width="60px">
       <el-form-item label="邮箱" prop="email">
-        <el-input v-model="validationForm.email"></el-input>
+        <el-input v-model="validationForm.email" size="small"></el-input>
       </el-form-item>
       <el-form-item label="验证码" prop="code">
         <el-col :span="13">
-          <el-input v-model="validationForm.code"></el-input>
+          <el-input v-model="validationForm.code" size="small"></el-input>
         </el-col>
         <el-col :span="5" :offset="2">
-          <el-button type="primary" @click="getValidationCode">获取验证码</el-button>
+          <el-button type="primary" @click="getValidationCode" size="small">获取</el-button>
         </el-col>
       </el-form-item>
       <el-form-item label="类型">
@@ -18,7 +19,7 @@
           <el-radio label="teacher">老师</el-radio>
         </el-radio-group>
       </el-form-item>
-      <el-form-item>
+      <el-form-item label-width="0px">
         <el-button type="primary" @click="validateAccount">验证</el-button>
       </el-form-item>
       <el-row>
@@ -113,3 +114,17 @@
     }
   }
 </script>
+
+<style scoped>
+
+  .panel {
+    width: 500px;
+    text-align: center;
+    margin: 100px auto;
+  }
+  .form {
+    width: 220px;
+    margin: 40px auto 0 auto;
+  }
+
+</style>
