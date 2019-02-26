@@ -58,6 +58,8 @@
         this.$emit("close")
       },
       createRelease() {
+
+        console.log("创建发布");
         createCourseRelease(this.$store.getters.token, this.courseId, this.form.beginDate, this.form.endDate,
           this.form.classOrder, this.form.hasQuota, this.form.quota,
           res => {
@@ -65,9 +67,7 @@
             this.$router.go(0)
           },
           err => {
-            this.$alert(err.response.data.message, "", {
-              confirmButtonText: '确定'
-            })
+            this.$message.error("创建发布时出现了错误");
           });
       }
     }

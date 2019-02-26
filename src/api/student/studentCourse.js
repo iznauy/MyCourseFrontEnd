@@ -33,7 +33,7 @@ export function quitCourse(token, id, callback, errorCallback) {
     .catch(errorCallback)
 }
 
-export function getOwnCourse(token, callback, errorCallback) {
+export function loadOwnCourse(token, callback, errorCallback) {
   window.axios.get(getUrl("student/myCourse"), {
     headers: {
       token
