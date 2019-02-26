@@ -1,33 +1,33 @@
 <template>
   <div>
-    <el-container>
-      <el-aside width="170px" height="170px">
-        <img :src="basicInfo.avatar" width="170px" height="170px">
-      </el-aside>
-      <el-main>
-        <div style="position: absolute;">
-          <transition name="fade">
-
-            <div v-if="editBasicInfo" style="width: 250px;position: absolute;">
-              <el-form :model="editInfo" ref="userInfo" label-width="0px" size="mini">
-                <el-form-item prop="userName">
-                  <el-input v-model="editInfo.username"></el-input>
-                </el-form-item>
-              </el-form>
+    <div class="info" style="background-color: #8cd6b4;">
+      <el-container>
+        <el-aside style="overflow: visible; margin-left: 15px" width="160px">
+          <div style="vertical-align: top;background-color: #FFFFFF;border: 4px solid #FFFFFF; border-radius: 8px;top: -15px;position: relative;  height: 160px; width: 160px">
+            <img alt="avatar" :src="basicInfo.avatar" width="160px" height="160px" style="border-radius: 4px;">
+          </div>
+        </el-aside>
+        <el-main>
+          <div>
+            <div v-if="editBasicInfo" style="font-weight: 800; font-size: 35px;">
+            <el-form :model="editInfo" ref="userInfo">
+              <el-form-item prop="userName" label-width="60px" label="用户名">
+                <el-input v-model="editInfo.username" size="medium"></el-input>
+              </el-form-item>
+            </el-form>
             </div>
-            <div v-else="editBasicInfo" style="width: 380px;position: absolute;">
-              <div style="font-weight: 800; font-size: 35px;">{{basicInfo.username}}</div>
-              <div style="font-size: 20px;">{{basicInfo.email}}</div>
+            <div v-else="editBasicInfo">
+              <div style="font-weight: 800; font-size: 35px;" class="center">{{basicInfo.username}}</div>
+              <div style="font-size: 15px; text-align: left; margin-top: 60px;">邮箱：{{basicInfo.email}}</div>
             </div>
-          </transition>
-        </div>
-      </el-main>
-      <el-aside>
-        <el-button v-if="!editBasicInfo" type="primary" style="float: right;height: 40px;width: 150px;margin-top: 10px;" @click="changeEditInfoState">编辑信息</el-button>
-        <el-button v-if="editBasicInfo" type="success" style="float: right;height: 40px;width: 150px;margin-top: 10px;" @click="commitInfoChange">提交</el-button>
-
-      </el-aside>
-    </el-container>
+          </div>
+        </el-main>
+        <el-aside>
+          <el-button v-if="!editBasicInfo" type="primary" style="float: right;margin-top: 120px; margin-right: 20px" @click="changeEditInfoState" size="small">编辑信息</el-button>
+          <el-button v-if="editBasicInfo" type="success" style="float: right;margin-top: 120px; margin-right: 20px" @click="commitInfoChange" size="small">提交</el-button>
+        </el-aside>
+      </el-container>
+    </div>
   </div>
 </template>
 
@@ -74,7 +74,10 @@
         modifyTeacherInfo(this.$store.getters.token, this.editInfo.username,
           () => {
             this.changeEditInfoState();
-            this.$router.go(0)
+            this.getUserInfo()
+          },
+          error => {
+            this.$message.error("变更信息失败：" + error.response.data.message);
           }
         );
 
@@ -90,5 +93,9 @@
 </script>
 
 <style scoped>
-
+  .center {
+    display:flex;
+    /*justify-content:center;*/
+    align-items:center;
+  }
 </style>
