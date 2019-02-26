@@ -2,7 +2,7 @@
   <div>
     <teacher-navi></teacher-navi>
     <div style="clear:both"></div>
-    <router-view style="width: 70%; margin: 30px auto;"></router-view>
+    <router-view style="width: 60%; margin: 30px auto;"></router-view>
   </div>
 </template>
 
