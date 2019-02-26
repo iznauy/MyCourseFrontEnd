@@ -10,7 +10,7 @@
       </el-form>
       <div v-if="availableForums !== null">
         <transition-group name="list" tag="p">
-          <forum-item v-for="(data, index) in availableForums" v-bind="data" :key="index" v-show="filter(data)"></forum-item>
+          <forum-item v-for="(data, index) in availableForums" v-bind="data" :key="data.courseId" v-show="filter(data)"></forum-item>
         </transition-group>
       </div>
     </div>

@@ -1,7 +1,7 @@
 <template>
   <div>
     <admin-navi></admin-navi>
-    <router-view></router-view>
+    <router-view style="width: 60%; margin: 30px auto;"></router-view>
   </div>
 </template>
 

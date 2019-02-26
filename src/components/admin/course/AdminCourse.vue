@@ -1,7 +1,17 @@
 <template>
   <div>
+    <el-form :inline="true">
+      <el-form-item label="搜索">
+        <el-input v-model="keyWord" placeholder="关键字" size="small"></el-input>
+      </el-form-item>
+      <el-form-item>
+        <el-button size="small" type="success" @click="keyWord = ''">清除</el-button>
+      </el-form-item>
+    </el-form>
     <div v-if="uncheckedCourses !== null">
-      <admin-course-item v-for="(data, index) in uncheckedCourses" v-bind="data" :key="index"></admin-course-item>
+      <transition-group name="list" tag="p">
+        <admin-course-item v-for="(data, index) in uncheckedCourses" v-bind="data" :key="data.id" v-show="filter(data)"></admin-course-item>
+      </transition-group>
     </div>
   </div>
 </template>
@@ -15,7 +25,8 @@
     name: "AdminCourse",
     data() {
       return {
-        uncheckedRelease: null
+        uncheckedCourses: null,
+        keyWord: ""
       }
     },
     methods: {
@@ -28,6 +39,10 @@
             this.$message.error("获取数据失败：" + err.response.data.message);
           }
         )
+      },
+      filter(data) {
+        return (data.name.indexOf(this.keyWord) !== -1) || (data.description.indexOf(this.keyWord) !== -1)
+          || (data.creatorEmail.indexOf(this.keyWord) !== -1);
       }
     },
     components: {
