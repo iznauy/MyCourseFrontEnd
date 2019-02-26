@@ -1,32 +1,62 @@
 <template>
-  <el-card>
-    <div slot="header">
-      <router-link :to="contentUrl">
-        <span>{{name}}</span>
-      </router-link>
-    </div>
-  </el-card>
+  <div @click="processClick">
+    <el-card  :body-style="{ padding: '0px' }" shadow="hover" style="margin-bottom: 10px;margin-top: 10px; cursor: pointer;">
+      <el-container>
+        <el-container>
+          <el-main style="background-color: transparent;">
+            <div style="font-weight: 800;font-size: 15px; margin-bottom: 10px" class="center">{{name}}</div>
+            <div style="color: #717478;font-size: 13px; text-align: left; margin-bottom: 10px">{{abstractDescription}}</div>
+            <div style="text-align: left; font-size: 10px; margin-bottom: 10px">创建日期：{{createDate}}
+            </div>
+          </el-main>
+        </el-container>
+      </el-container>
+      <!--   <div slot="header">
+           <router-link :to="contentUrl">
+             <span>{{name}}</span>
+           </router-link>
+         </div>
+         -->
+    </el-card>
+  </div>
 </template>
 
 <script>
   export default {
     props: {
       "name": String,
-      "courseId": Number
+      "courseId": Number,
+      "description": String,
+      "createDate": String
     },
     name: "ForumItem",
     data() {
       return {
       }
     },
+    methods: {
+      processClick() {
+        console.log(this.courseId);
+      }
+    },
     computed: {
       contentUrl() {
         return "/forum/" + this.courseId;
+      },
+      abstractDescription() {
+        if (this.description.length < 50)
+          return this.description;
+        else
+          return this.description.substr(0, 50) + "...";
       }
     }
   }
 </script>
 
 <style scoped>
-
+  .center {
+    display:flex;
+    /*justify-content:center;*/
+    align-items:center;
+  }
 </style>

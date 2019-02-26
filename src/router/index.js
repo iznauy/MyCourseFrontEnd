@@ -9,7 +9,7 @@ import StudentCourse from "@/components/student/StudentCourse";
 import StudentInfo from "@/components/student/StudentInfo";
 import TeacherMain from "@/components/teacher/TeacherMain";
 import Forum from "@/components/forum/Forum";
-import TeacherCourse from "@/components/teacher/course/Course";
+import TeacherCourse from "@/components/teacher/course/TeacherCourse";
 import TeacherInfo from "@/components/teacher/TeacherInfo";
 import AdminLogin from "@/components/admin/AdminLogin";
 import AdminCourse from "@/components/admin/course/AdminCourse";
@@ -86,6 +86,10 @@ export default new Router({
         },
         {
           path: 'myCourse',
+          component: TeacherCourse
+        },
+        {
+          path: 'course',
           component: TeacherCourse
         },
         {

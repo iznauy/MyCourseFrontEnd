@@ -5,7 +5,6 @@
       mode="horizontal" @select="handleSelect"
       class="float_right" style="position: relative; top: -2px;">
       <el-menu-item index="/teacher/myCourse">我的课程</el-menu-item>
-      <el-menu-item index="/teacher/myRelease">课程发布</el-menu-item>
       <el-menu-item index="/teacher/forum">论坛区</el-menu-item>
       <el-submenu index="/teacher">
         <template slot="title"><avatar></avatar></template>
