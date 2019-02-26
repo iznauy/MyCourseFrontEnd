@@ -14,12 +14,14 @@
           </div>
         </el-main>
         <el-aside style=" float: right;">
-          <div style="margin: 25px">
-            <el-button type="primary" class="button" v-if="approve" @click="showHistoryReleasePanel = true" size="small">历史发布</el-button>
+          <div style="margin: 25px 25px 25px 0">
+            <el-button type="primary" style="float: right" v-if="approve" @click="showHistoryReleasePanel = true" size="small">历史发布</el-button>
           </div>
-          <div style="margin: 10px">
-            <el-button type="primary" class="button" v-if="approve" @click="showCreateReleaseTable = true" size="small">新增发布</el-button>
+          <div style="clear: both;"></div>
+          <div style="margin: 25px 25px 25px 0">
+            <el-button type="primary" style="float: right" v-if="approve" @click="showCreateReleaseTable = true" size="small">新增发布</el-button>
           </div>
+          <div style="clear: both"></div>
         </el-aside>
      </el-container>
     </el-card>
