@@ -10,8 +10,8 @@
       </el-form>
     <div slot="footer" class="dialog-footer">
 
-      <el-button type="text" @click="cancel">取消</el-button>
-      <el-button type="primary" @click="next">{{nextName}}</el-button>
+      <el-button type="text" @click.stop="cancel">取消</el-button>
+      <el-button type="primary" @click.stop="next">{{nextName}}</el-button>
     </div>
 
     <el-steps :active="active" finish-status="success" align-center="true">

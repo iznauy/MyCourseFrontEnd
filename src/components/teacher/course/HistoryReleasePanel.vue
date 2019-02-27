@@ -83,7 +83,6 @@
         })
       },
       close() {
-        console.log("adada");
         this.$emit('close')
       },
       goToReleaseInfo(row) {

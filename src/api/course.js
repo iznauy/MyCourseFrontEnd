@@ -12,6 +12,34 @@ export function loadCourseBasicInfo(token, courseId, callback, errorCallback) {
     .catch(errorCallback)
 }
 
+export function loadWares(token, courseId, callback, errorCallback) {
+  window.axios.get(getUrl("course/ware"), {
+    headers: {
+      token
+    },
+    params: {
+      courseId
+    }
+  }).then(callback)
+    .catch(errorCallback)
+}
+
+export function releaseWare(token, courseId, name, file, callback, errorCallback) {
+  console.log(file);
+  let data = new FormData();
+  data.append('ware', file);
+  window.axios.post(getUrl("course/ware"), data, {
+    headers: {
+      token,
+      'Content-Type': 'multipart/form-data'
+    },
+    params: {
+      courseId, name
+    }
+  }).then(callback)
+    .catch(errorCallback)
+}
+
 export function loadAssignments(token, courseReleaseId, callback, errorCallback) {
   window.axios.get(getUrl("course/assignments"), {
     params: {
@@ -31,6 +59,40 @@ export function releaseAssignment(token, courseReleaseId, name, description, dea
     },
     params: {
       courseReleaseId, name, description, deadLine
+    }
+  }).then(callback)
+    .catch(errorCallback)
+}
+
+export function loadAssignmentsDetail(token, assignmentId, callback, errorCallback) {
+  window.axios.get(getUrl("course/assignment"), {
+    headers: {
+      token
+    },
+    params: {
+      assignmentId
+    }
+  }).then(callback).catch(errorCallback)
+}
+
+export function loadClassAssignmentState(token, assignmentId, callback, errorCallback) {
+  window.axios.get(getUrl("course/assignment/state"), {
+    headers: {
+      token
+    },
+    params: {
+      assignmentId
+    }
+  }).then(callback).catch(errorCallback)
+}
+
+export function downloadAssignment(token, assignmentId, callback, errorCallback) {
+  window.axios.get(getUrl("course/assignment/download"), {
+    headers: {
+      token
+    },
+    params: {
+      assignmentId
     }
   }).then(callback)
     .catch(errorCallback)
