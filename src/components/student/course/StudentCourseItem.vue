@@ -12,7 +12,7 @@
         </el-main>
         <el-aside style="float: right;">
           <div style="margin: 90px 25px 10px 0">
-            <el-button type="primary" style="float: right" size="small">进入</el-button>
+            <el-button type="primary" style="float: right" size="small" @click="turnToCourse">进入</el-button>
           </div>
           <div style="clear: both;"></div>
         </el-aside>
@@ -58,6 +58,11 @@
         return now > end;
       }
     },
+    methods: {
+      turnToCourse() {
+        this.$router.push("/student/course/" + this.courseId + "/" + this.id);
+      }
+    }
 
   }
 </script>

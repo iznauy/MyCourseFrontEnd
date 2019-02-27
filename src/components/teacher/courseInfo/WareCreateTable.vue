@@ -47,7 +47,6 @@
         this.$emit('close')
       },
       upload(item) {
-        console.log(item);
         releaseWare(this.$store.getters.token, this.courseId, this.name, item.file,
         res => {
           this.$message.success("上传成功！");

@@ -12,6 +12,30 @@ export function loadCourseBasicInfo(token, courseId, callback, errorCallback) {
     .catch(errorCallback)
 }
 
+export function loadClassStudents(token, releaseId, callback, errorCallback) {
+  window.axios.get(getUrl("course/member"), {
+    headers: {
+      token
+    },
+    params: {
+      releaseId
+    }
+  }).then(callback)
+    .catch(errorCallback)
+}
+
+export function loadClassmates(token, releaseId, callback, errorCallback) {
+  window.axios.get(getUrl("release/member"), {
+    headers: {
+      token
+    },
+    params: {
+      releaseId
+    }
+  }).then(callback)
+    .catch(errorCallback)
+}
+
 export function loadWares(token, courseId, callback, errorCallback) {
   window.axios.get(getUrl("course/ware"), {
     headers: {
@@ -25,7 +49,6 @@ export function loadWares(token, courseId, callback, errorCallback) {
 }
 
 export function releaseWare(token, courseId, name, file, callback, errorCallback) {
-  console.log(file);
   let data = new FormData();
   data.append('ware', file);
   window.axios.post(getUrl("course/ware"), data, {
@@ -35,6 +58,18 @@ export function releaseWare(token, courseId, name, file, callback, errorCallback
     },
     params: {
       courseId, name
+    }
+  }).then(callback)
+    .catch(errorCallback)
+}
+
+export function loadOwnAssignmentState(token, assignmentId, callback, errorCallback) {
+  window.axios.get(getUrl("course/assignment/own"), {
+    headers: {
+      token
+    },
+    params: {
+      assignmentId
     }
   }).then(callback)
     .catch(errorCallback)
@@ -59,6 +94,20 @@ export function releaseAssignment(token, courseReleaseId, name, description, dea
     },
     params: {
       courseReleaseId, name, description, deadLine
+    }
+  }).then(callback)
+    .catch(errorCallback)
+}
+
+export function commitAssignment(token, assignmentId, assignment, callback, errorCallback) {
+  let data = new FormData();
+  data.append('assignment', assignment);
+  window.axios.post(getUrl("course/assignment/commit"), data, {
+    headers: {
+      token
+    },
+    params: {
+      assignmentId
     }
   }).then(callback)
     .catch(errorCallback)

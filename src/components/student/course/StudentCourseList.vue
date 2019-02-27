@@ -19,7 +19,7 @@
   import StudentCourseItem from "@/components/student/course/StudentCourseItem";
 
   export default {
-    name: "StudentCourse",
+    name: "StudentCourseList",
     components: {StudentCourseItem},
     data() {
       return {

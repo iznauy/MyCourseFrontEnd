@@ -5,7 +5,7 @@ import Login from "@/components/index/LoginPanel"
 import Register from "@/components/index/RegisterPanel"
 import Validation from "@/components/index/ValidationPanel"
 import StudentMain from "@/components/student/StudentMain"
-import StudentCourse from "@/components/student/course/StudentCourse";
+import StudentCourseList from "@/components/student/course/StudentCourseList";
 import StudentInfo from "@/components/student/StudentInfo";
 import TeacherMain from "@/components/teacher/TeacherMain";
 import Forum from "@/components/forum/Forum";
@@ -19,6 +19,7 @@ import ForumContent from "@/components/forum/ForumContent";
 import Poster from "@/components/forum/Poster";
 import StudentAvailableCourse from "@/components/student/course/StudentAvailableCourse";
 import TeacherCourse from "@/components/teacher/courseInfo/TeacherCourse";
+import StudentCourse from "@/components/student/courseInfo/StudentCourse";
 
 
 Vue.use(Router);
@@ -61,8 +62,12 @@ export default new Router({
           redirect: 'myCourse'
         },
         {
-          path: 'myCourse',
+          path: 'course/:id/:releaseId',
           component: StudentCourse
+        },
+        {
+          path: 'myCourse',
+          component: StudentCourseList
         },
         {
           path: 'allCourse',
