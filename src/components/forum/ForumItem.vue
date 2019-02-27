@@ -11,12 +11,6 @@
           </el-main>
         </el-container>
       </el-container>
-      <!--   <div slot="header">
-           <router-link :to="contentUrl">
-             <span>{{name}}</span>
-           </router-link>
-         </div>
-         -->
     </el-card>
   </div>
 </template>
@@ -40,9 +34,6 @@
       }
     },
     computed: {
-      contentUrl() {
-        return "/forum/" + this.courseId;
-      },
       abstractDescription() {
         if (this.description.length < 50)
           return this.description;

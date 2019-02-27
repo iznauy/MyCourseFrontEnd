@@ -23,13 +23,13 @@
     components: {StudentCourseItem},
     data() {
       return {
-        keyWord: null,
+        keyWord: "",
         courses: null
       }
     },
     methods: {
       filter(data) {
-        return true;
+        return data.name.indexOf(this.keyWord) !== -1;
       },
       getOwnCourses() {
         loadOwnCourse(this.$store.getters.token,
