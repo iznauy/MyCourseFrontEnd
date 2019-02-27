@@ -9,7 +9,7 @@ import StudentCourse from "@/components/student/course/StudentCourse";
 import StudentInfo from "@/components/student/StudentInfo";
 import TeacherMain from "@/components/teacher/TeacherMain";
 import Forum from "@/components/forum/Forum";
-import TeacherCourse from "@/components/teacher/course/TeacherCourse";
+import TeacherCourses from "@/components/teacher/course/TeacherCourses";
 import TeacherInfo from "@/components/teacher/TeacherInfo";
 import AdminLogin from "@/components/admin/AdminLogin";
 import AdminCourse from "@/components/admin/course/AdminCourse";
@@ -18,6 +18,7 @@ import AdminRelease from "@/components/admin/release/AdminRelease";
 import ForumContent from "@/components/forum/ForumContent";
 import Poster from "@/components/forum/Poster";
 import StudentAvailableCourse from "@/components/student/course/StudentAvailableCourse";
+import TeacherCourse from "@/components/teacher/courseInfo/TeacherCourse";
 
 
 Vue.use(Router);
@@ -87,10 +88,10 @@ export default new Router({
         },
         {
           path: 'myCourse',
-          component: TeacherCourse
+          component: TeacherCourses
         },
         {
-          path: 'course',
+          path: 'course/:id',
           component: TeacherCourse
         },
         {

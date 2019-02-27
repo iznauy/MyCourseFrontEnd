@@ -39,7 +39,7 @@
   import {deepClone} from "@/api/tools/tool";
 
   export default {
-    name: "TeacherCourse",
+    name: "TeacherCourses",
     data() {
       return {
         courses: null,
@@ -100,9 +100,5 @@
 </script>
 
 <style scoped>
-  .center {
-    display:flex;
-    /*justify-content:center;*/
-    align-items:center;
-  }
+
 </style>
