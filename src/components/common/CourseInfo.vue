@@ -11,6 +11,10 @@
             教师：{{teacher}}
           </div>
           <div style="clear: both;"></div>
+          <div style="margin: 0 20px 0 0; font-size: 15px">
+            <slot></slot>
+          </div>
+          <div style="clear: both;"></div>
         </el-aside>
       </el-container>
     </el-card>
