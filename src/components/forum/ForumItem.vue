@@ -30,7 +30,7 @@
     },
     methods: {
       processClick() {
-        console.log(this.courseId);
+        this.$router.push("/" + this.$store.getters.userType + "/forum/" + this.courseId);
       }
     },
     computed: {

@@ -79,8 +79,17 @@ export default new Router({
         },
         {
           path: 'forum',
-          component: Forum
+          component: Forum,
+        },
+        {
+          path: "forum/:id",
+          component: ForumContent
+        },
+        {
+          path: "forum/:id/:posterId",
+          component: Poster
         }
+
       ]
     },
     {
