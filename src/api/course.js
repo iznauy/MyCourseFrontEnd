@@ -146,3 +146,27 @@ export function downloadAssignment(token, assignmentId, callback, errorCallback)
   }).then(callback)
     .catch(errorCallback)
 }
+
+export function loadBroadCasting(token, releaseId, callback, errorCallback) {
+  window.axios.get(getUrl("release/broadcasting"), {
+    headers: {
+      token
+    },
+    params: {
+      releaseId
+    }
+  }).then(callback)
+    .catch(errorCallback)
+}
+
+export function releaseBroadCasting(token, releaseId, content, callback, errorCallback) {
+  window.axios.post(getUrl("release/broadcasting"), {}, {
+    headers: {
+      token
+    },
+    params: {
+      releaseId, content
+    }
+  }).then(callback)
+    .catch(errorCallback)
+}

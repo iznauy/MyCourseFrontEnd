@@ -4,6 +4,7 @@
     <teacher-assignment-list style="display: inline;" :release-id="3" v-cloak></teacher-assignment-list>
     <teacher-course-ware-list style="display: inline;" :course-id="parseInt($route.params['id'])" v-cloak></teacher-course-ware-list>
     <student-list style="display: inline;" :release-id="3" v-cloak></student-list>
+    <teacher-broad-casting :release-id="3" v-cloak></teacher-broad-casting>
   </div>
 </template>
 
@@ -13,6 +14,7 @@
   import TeacherAssignmentList from "@/components/teacher/courseInfo/TeacherAssignmentList";
   import TeacherCourseWareList from "@/components/teacher/courseInfo/TeacherCourseWareList";
   import StudentList from "@/components/teacher/courseInfo/StudentList";
+  import TeacherBroadCasting from "@/components/teacher/courseInfo/TeacherBroadCasting"
 
   export default {
     name: "TeacherCourse",
@@ -44,7 +46,7 @@
     components: {
       StudentList,
       TeacherCourseWareList,
-      CourseInfo, TeacherAssignmentList
+      CourseInfo, TeacherAssignmentList, TeacherBroadCasting
     }
   }
 </script>

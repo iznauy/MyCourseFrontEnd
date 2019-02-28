@@ -66,7 +66,7 @@
       creatorUsername: String,
       creatorAvatar: String,
       title: String,
-      createTime: String,
+      lastModified: String,
       content: String
     },
     computed: {

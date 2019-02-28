@@ -6,6 +6,7 @@
     <classmate-list :release-id="parseInt($route.params['releaseId'])"></classmate-list>
     <student-ware-list :course-id="parseInt($route.params['id'])"></student-ware-list>
     <student-assignment-list :release-id="parseInt($route.params['releaseId'])"></student-assignment-list>
+    <student-broad-casting :release-id="parseInt($route.params['releaseId'])"></student-broad-casting>
 
     <el-dialog title="警告" :visible.sync="quitVisible" width="20%">
       <span>确定要退选？</span>
@@ -24,11 +25,13 @@
   import {loadCourseBasicInfo} from "@/api/course";
   import StudentAssignmentList from "@/components/student/courseInfo/StudentAssignmentList";
   import {quitCourse} from "@/api/student/studentCourse";
+  import StudentBroadCasting from "@/components/student/courseInfo/StudentBroadCasting";
 
   export default {
 
     name: "StudentCourse",
     components: {
+      StudentBroadCasting,
       StudentAssignmentList,
       CourseInfo, ClassmateList, StudentWareList
     },

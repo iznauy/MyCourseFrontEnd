@@ -7,7 +7,7 @@
       <el-table-column label="学号" width="100" prop="number" align="center"></el-table-column>
       <el-table-column label="头像" width="100" align="center" prop="avatar">
         <template slot-scope="scope">
-          <img :src="getUrl(scope.row.avatar)" width="50" height="50" alt="头像"/>
+          <img :src="getAvatar(scope.row)" width="50" height="50" alt="头像"/>
         </template>
       </el-table-column>
     </el-table>
@@ -35,7 +35,10 @@
           this.students = res.data;
         })
       },
-      getUrl
+      getAvatar(row) {
+        if (row)
+          return getUrl(row.avatar)
+      }
     },
     created() {
       this.getStudents();
