@@ -1,10 +1,17 @@
 <template>
-  <img class="avatar" :src="$store.getters['avatar']">
+  <img class="avatar" :src="avatar">
 </template>
 
 <script>
+  import {getUrl} from "@/api/tools/tool";
+
   export default {
     name: "Avatar",
+    computed: {
+      avatar() {
+        return getUrl(this.$store.getters['avatar']);
+      }
+    }
   }
 </script>
 

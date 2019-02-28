@@ -31,3 +31,14 @@ export function changeStudentInfo(token, username, number, callback, errorCallba
     .catch(errorCallback)
 }
 
+export function uploadAvatar(token, file, callback, errorCallback) {
+  let data = new FormData();
+  data.set("avatar", file);
+  window.axios.post(getUrl("student/avatar"), data,
+    {
+      headers: {
+        token
+      }
+    }).then(callback)
+    .catch(errorCallback)
+}

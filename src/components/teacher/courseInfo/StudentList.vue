@@ -7,7 +7,7 @@
       <el-table-column label="学号" width="100" prop="number" align="center"></el-table-column>
       <el-table-column label="头像" width="100" align="center" prop="avatar">
         <template slot-scope="scope">
-          <img :src="scope.row.avatar" width="50" height="50" alt="头像"/>
+          <img :src="getUrl(scope.row.avatar)" width="50" height="50" alt="头像"/>
         </template>
       </el-table-column>
     </el-table>

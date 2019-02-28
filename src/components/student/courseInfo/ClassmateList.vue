@@ -36,7 +36,7 @@
       getUrl,
       getAvatarUrl(data) {
         if (data)
-          return data.avatar;
+          return getUrl(data.avatar);
       }
     },
     created() {
