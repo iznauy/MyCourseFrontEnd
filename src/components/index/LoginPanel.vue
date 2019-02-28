@@ -73,7 +73,6 @@
 
             getOwnAvatar(this.$store.getters.token,
               re => {
-                console.log(re);
                 this.$store.dispatch("updateAvatar", re.data.avatar)
               }
             )

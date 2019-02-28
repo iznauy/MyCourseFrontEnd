@@ -14,7 +14,6 @@
 
 <script>
 
-  import ForumItem from "@/components/forum/ForumItem"
   import PosterItem from "@/components/forum/PosterItem";
 
   export default {
@@ -34,8 +33,7 @@
       }
     },
     components: {
-      PosterItem,
-      ForumItem
+      PosterItem
     },
     computed: {
     }

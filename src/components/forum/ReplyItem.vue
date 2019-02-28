@@ -1,16 +1,13 @@
 <template>
-  <div>
-    <el-card class="poster-item" :body-style="{ padding: '0px' }" shadow="hover" style="margin-bottom: 10px; margin-top: 10px">
-      <div slot="header">
-        <h2 style="text-align: left;">{{title}}</h2>
-      </div>
+  <div style="width: 95%; margin: 0 auto;">
+    <el-card class="poster-item" :body-style="{ padding: '0px' }">
       <el-container>
-        <el-aside style="width: 150px;">
+        <el-aside style="width: 135px;">
           <el-card  v-popover:userInfo>
             <div>
-              <img :src="avatar" height="100px" width="100px"/>
+              <img :src="avatar" height="90px" width="90px"/>
             </div>
-            <div style="margin-top: 10px">
+            <div style="margin-top: 9px">
               <span v-if="creatorType === 'teacher'" style="font-weight: 400; color: red;">{{creatorUsername}}</span>
               <span v-if="creatorType === 'student'">{{creatorUsername}}</span>
             </div>
@@ -18,7 +15,7 @@
         </el-aside>
         <el-container>
           <el-main>
-            <div style="text-align: left; font-size: 15px; font-weight: 800">
+            <div style="text-align: left; font-size: 14px; font-weight: 500">
               {{content}}
             </div>
           </el-main>
@@ -58,14 +55,13 @@
   import {getUrl} from "@/api/tools/tool";
 
   export default {
-    name: "PosterMain",
+    name: "ReplyItem",
     props: {
       id: Number,
       creatorEmail: String,
       creatorType: String,
       creatorUsername: String,
       creatorAvatar: String,
-      title: String,
       createTime: String,
       content: String
     },

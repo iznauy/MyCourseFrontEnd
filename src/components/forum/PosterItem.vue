@@ -23,31 +23,30 @@
           <div style="margin-top: 10px; font-size: 10px">
             <span>最后回复：{{changeTime}}</span>
           </div>
-          <el-popover placement="top-start" width="400" trigger="hover"
-                       ref="userInfo">
-            <el-container style="color: black">
-                <el-aside style="text-align: left; margin: 20px 0 0 20px; width: 100px;">
-                  <div>
-                    <img :src="avatar" width="100px" height="100px"/>
-                  </div>
-                </el-aside>
-                <el-main>
-                  <div style="text-align: left; font-size: 18px; margin-top: 5px; margin-left: 10px">
-                    用户名：{{creatorUsername}}
-                  </div>
-                  <div style="text-align: left; font-size: 15px; margin-top: 10px; margin-left: 10px">
-                    身份：{{creatorTypeInfo}}
-                  </div>
-                  <div style="text-align: left; font-size: 15px; margin-top: 10px; margin-left: 10px">
-                    邮箱：{{creatorEmail}}
-                  </div>
-                </el-main>
-            </el-container>
-          </el-popover>
         </el-aside>
       </el-container>
     </el-card>
-
+    <el-popover placement="top-start" width="500" trigger="hover"
+                ref="userInfo">
+      <el-container style="color: black">
+        <el-aside style="text-align: left; margin: 20px 0 0 20px; width: 100px;">
+          <div>
+            <img :src="avatar" width="100px" height="100px"/>
+          </div>
+        </el-aside>
+        <el-main>
+          <div style="text-align: left; font-size: 18px; margin-top: 5px; margin-left: 10px">
+            用户名：{{creatorUsername}}
+          </div>
+          <div style="text-align: left; font-size: 15px; margin-top: 10px; margin-left: 10px">
+            身份：{{creatorTypeInfo}}
+          </div>
+          <div style="text-align: left; font-size: 15px; margin-top: 10px; margin-left: 10px">
+            邮箱：{{creatorEmail}}
+          </div>
+        </el-main>
+      </el-container>
+    </el-popover>
   </div>
 </template>
 
