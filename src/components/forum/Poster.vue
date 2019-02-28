@@ -3,19 +3,19 @@
     <p>PosterContent</p>
     <poster-main></poster-main>
     <div class="replies">
-      <reply></reply>
+      <reply-list></reply-list>
     </div>
   </div>
 </template>
 
 <script>
   import PosterMain from "@/components/forum/PosterMain";
-  import Reply from "@/components/forum/Reply";
+  import ReplyList from "@/components/forum/ReplyList";
 
   export default {
     name: "Poster",
     components: {
-      Reply,
+      ReplyList,
       PosterMain
 
     }

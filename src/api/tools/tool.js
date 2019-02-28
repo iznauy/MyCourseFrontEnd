@@ -1,6 +1,8 @@
 
 export function getUrl(url) {
   let baseUrl = "http://localhost:8001/";
+  if (url.indexOf("http") === 0)
+    return url;
   return baseUrl + url;
 }
 

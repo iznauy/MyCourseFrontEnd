@@ -46,7 +46,7 @@
         })
       },
       createPoster() {
-        sendPoster(this.$store.getters.token, this.$route.params.id, this.newPost.title, this.newPost.content,
+        sendPoster(this.$store.getters.token, this.$route.params['id'], this.newPost.title, this.newPost.content,
         res => {
           this.$message.info("发表成功");
           this.$router.go(0);
