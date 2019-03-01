@@ -1,4 +1,5 @@
 import {getUrl} from "@/api/tools/tool";
+import {Form} from "element-ui";
 
 export function createCourse(token, name, description, callback, errorCallback) {
   window.axios.post(getUrl("teacher/course/create"), {}, {
@@ -43,12 +44,27 @@ export function getAllReleases(token, callback, errorCallback) {
 }
 
 export function createCourseRelease(token, id, beginDate, endDate, classOrder, hasQuota, quota, callback, errorCallback) {
-  const data = {id, beginDate, endDate, classOrder, hasQuota, quota}
+  const data = {id, beginDate, endDate, classOrder, hasQuota, quota};
   window.axios.post(getUrl("teacher/course/release"), {}, {
     headers: {
       token
     },
     params: data
+  }).then(callback)
+    .catch(errorCallback)
+}
+
+export function uploadScores(token, releaseId, file, publicized, callback, errorCallback) {
+  let data = new FormData();
+  data.set("scores", file);
+  window.axios.post(getUrl("teacher/course/release/score"), data, {
+    headers: {
+      token
+    },
+    params: {
+      publicized,
+      releaseId
+    }
   }).then(callback)
     .catch(errorCallback)
 }
