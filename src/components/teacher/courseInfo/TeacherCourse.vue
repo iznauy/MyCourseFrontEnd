@@ -1,8 +1,16 @@
 <template>
   <div>
     <course-info v-bind="courseInfo" v-cloak></course-info>
-    <teacher-course-ware-list :course-id="parseInt($route.params['id'])" v-cloak></teacher-course-ware-list>
-    <release-panel :course-id="parseInt($route.params['id'])" v-cloak style="margin-bottom: 6px"></release-panel>
+    <div style="margin-top: 30px">
+      <el-tabs tabPosition="left">
+        <el-tab-pane label="课件">
+          <teacher-course-ware-list :course-id="parseInt($route.params['id'])" v-cloak></teacher-course-ware-list>
+        </el-tab-pane>
+        <el-tab-pane label="历史发布">
+          <release-panel :course-id="parseInt($route.params['id'])" v-cloak style="margin-bottom: 6px"></release-panel>
+        </el-tab-pane>
+      </el-tabs>
+    </div>
     <forum-content></forum-content>
   </div>
 </template>

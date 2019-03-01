@@ -1,8 +1,7 @@
 <template>
   <div>
-    <h2 style="text-align: left">课件</h2>
-    <el-table :data="wares" border style="width: 201px">
-      <el-table-column label="名称" prop="name" width="120" align="center"></el-table-column>
+    <el-table :data="wares" border style="width: 600px; margin: 0 auto;" max-height="300px" height="300px">
+      <el-table-column label="名称" prop="name" width="520" align="center"></el-table-column>
       <el-table-column align="right" width="80">
         <template slot="header" slot-scope="scope">
           <el-button type="primary" size="small" @click="addWare">添加</el-button>

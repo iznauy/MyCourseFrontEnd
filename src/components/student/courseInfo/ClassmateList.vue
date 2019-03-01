@@ -1,8 +1,7 @@
 <template>
   <div>
-    <h2 style="text-align: left">同学</h2>
-    <el-table :data="students" border style="width: 200px;" max-height="500px">
-      <el-table-column label="昵称" prop="name" width="100" align="center"></el-table-column>
+    <el-table :data="students" border style="width: 601px; margin: 0 auto;" max-height="500px">
+      <el-table-column label="昵称" prop="name" width="500" align="center"></el-table-column>
       <el-table-column label="头像" width="100" align="center">
         <template slot-scope="scope">
           <img :src="getAvatarUrl(scope.row)" width="50" height="50" alt="头像"/>

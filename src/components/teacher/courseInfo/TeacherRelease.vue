@@ -3,9 +3,19 @@
     <course-info v-bind="courseInfo" v-cloak>
       <el-button type="success" size="small" style="margin-top: 10px; margin-bottom: 10px" @click="uploadScoreVisible = true">上传成绩</el-button>
     </course-info>
-    <teacher-broad-casting :release-id="parseInt($route.params['releaseId'])" v-cloak ></teacher-broad-casting>
-    <student-list :release-id="parseInt($route.params['releaseId'])" v-cloak></student-list>
-    <teacher-assignment-list :release-id="parseInt($route.params['releaseId'])" v-cloak></teacher-assignment-list>
+    <div style="margin-top: 30px">
+      <el-tabs tabPosition="left">
+        <el-tab-pane label="公告">
+          <teacher-broad-casting :release-id="parseInt($route.params['releaseId'])" v-cloak ></teacher-broad-casting>
+        </el-tab-pane>
+        <el-tab-pane label="学生">
+          <student-list :release-id="parseInt($route.params['releaseId'])" v-cloak></student-list>
+        </el-tab-pane>
+        <el-tab-pane label="作业">
+          <teacher-assignment-list :release-id="parseInt($route.params['releaseId'])" v-cloak></teacher-assignment-list>
+        </el-tab-pane>
+      </el-tabs>
+    </div>
     <forum-content></forum-content>
 
     <el-dialog :visible.sync="uploadScoreVisible" title="上传成绩">

@@ -9,16 +9,32 @@
         <el-button v-if="courseScore.publicized" style="margin-left: 10px; margin-top: 10px; margin-bottom: 10px" size="small" type="primary" @click="downloadScore">下载班级成绩</el-button>
       </div>
     </course-info>
-    <el-container>
-      <el-aside>
-        <student-assignment-list :release-id="parseInt($route.params['releaseId'])"></student-assignment-list>
-        <student-ware-list :course-id="parseInt($route.params['id'])"></student-ware-list>
-      </el-aside>
-      <el-main>
-        <student-broad-casting :release-id="parseInt($route.params['releaseId'])" style="float: right; width: 400px;top: -21px;position: relative;"></student-broad-casting>
-        <classmate-list :release-id="parseInt($route.params['releaseId'])" style="float: right; width: 201px;top: -21px;position: relative;"></classmate-list>
-      </el-main>
-    </el-container>
+    <div style="margin-top: 30px">
+      <el-tabs tabPosition="left">
+        <el-tab-pane label="作业">
+          <student-assignment-list :release-id="parseInt($route.params['releaseId'])"></student-assignment-list>
+        </el-tab-pane>
+        <el-tab-pane label="课件">
+          <student-ware-list :course-id="parseInt($route.params['id'])"></student-ware-list>
+        </el-tab-pane>
+        <el-tab-pane label="公告板">
+          <student-broad-casting :release-id="parseInt($route.params['releaseId'])"></student-broad-casting>
+        </el-tab-pane>
+        <el-tab-pane label="同学">
+          <classmate-list :release-id="parseInt($route.params['releaseId'])"></classmate-list>
+        </el-tab-pane>
+      </el-tabs>
+    </div>
+    <!--<el-container>-->
+      <!--<el-aside>-->
+        <!--<student-assignment-list :release-id="parseInt($route.params['releaseId'])"></student-assignment-list>-->
+        <!--<student-ware-list :course-id="parseInt($route.params['id'])"></student-ware-list>-->
+      <!--</el-aside>-->
+      <!--<el-main>-->
+        <!--<student-broad-casting :release-id="parseInt($route.params['releaseId'])" style="float: right; width: 400px;top: -21px;position: relative;"></student-broad-casting>-->
+        <!--<classmate-list :release-id="parseInt($route.params['releaseId'])" style="float: right; width: 201px;top: -21px;position: relative;"></classmate-list>-->
+      <!--</el-main>-->
+    <!--</el-container>-->
 
 
     <div>

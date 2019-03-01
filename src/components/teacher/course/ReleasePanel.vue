@@ -1,7 +1,6 @@
 <template>
   <div>
-    <h2>历史发布</h2>
-    <el-table :data="historyRelease" border="" style="width: 661px; margin: 0 auto;">
+    <el-table :data="historyRelease" border="" style="width: 661px; margin: 0 auto;" max-height="300px" height="300px">
       <el-table-column prop="classOrder" label="班次" width="50px" align="center"></el-table-column>
       <el-table-column prop="begin" label="开始时间" width="100px" align="center"></el-table-column>
       <el-table-column prop="end" label="结束时间" width="100px" align="center"></el-table-column>

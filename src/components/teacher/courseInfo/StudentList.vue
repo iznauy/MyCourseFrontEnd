@@ -1,11 +1,10 @@
 <template>
   <div>
-    <h2 style="text-align: left">学生</h2>
-    <el-table :data="students" border style="width: 521px;">
+    <el-table :data="students" border style="width: 601px; margin: 0 auto;" max-height="300" height="300">
       <el-table-column label="昵称" prop="name" width="100" align="center"></el-table-column>
       <el-table-column label="邮箱" width="220" prop="email" align="center"></el-table-column>
-      <el-table-column label="学号" width="100" prop="number" align="center"></el-table-column>
-      <el-table-column label="头像" width="100" align="center" prop="avatar">
+      <el-table-column label="学号" width="140" prop="number" align="center"></el-table-column>
+      <el-table-column label="头像" width="140" align="center" prop="avatar">
         <template slot-scope="scope">
           <img :src="getAvatar(scope.row)" width="50" height="50" alt="头像"/>
         </template>

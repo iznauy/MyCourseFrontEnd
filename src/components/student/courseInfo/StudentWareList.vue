@@ -1,8 +1,7 @@
 <template>
   <div>
-    <h2 style="text-align: left">课件</h2>
-    <el-table :data="wares" border style="width: 201px" max-height="500px">
-      <el-table-column label="名称" prop="name" width="120" align="center"></el-table-column>
+    <el-table :data="wares" border style="width: 601px; margin: 0 auto;" max-height="500px">
+      <el-table-column label="名称" prop="name" width="520" align="center"></el-table-column>
       <el-table-column align="right" width="80">
         <template slot-scope="scope">
           <el-button type="primary" size="small" @click="download(scope.row)">下载</el-button>

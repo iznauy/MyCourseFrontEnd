@@ -1,6 +1,5 @@
 <template>
-  <div style="width: 60%;">
-    <h2 style="text-align: left;">公告板</h2>
+  <div style="width: 600px; margin: 0 auto;">
     <el-card :body-style="{ padding: '5px', overflow: 'hidden'}">
       <div slot="header" style="height: 15px">
         <span style="float: left; font-weight: 800">最新公告</span>

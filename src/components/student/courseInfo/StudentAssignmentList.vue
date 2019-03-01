@@ -1,8 +1,7 @@
 <template>
   <div>
-    <h2 style="text-align: left">作业</h2>
-    <el-table :data="assignments" border style="width: 201px">
-      <el-table-column label="名称" prop="name" width="120" align="center"></el-table-column>
+    <el-table :data="assignments" border style="width: 601px; margin: 0 auto;">
+      <el-table-column label="名称" prop="name" width="520" align="center"></el-table-column>
       <el-table-column align="right" width="80">
         <template slot-scope="scope">
           <el-button type="primary" size="small" @click="handleView(scope.row)">查看</el-button>
