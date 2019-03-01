@@ -68,3 +68,18 @@ export function uploadScores(token, releaseId, file, publicized, callback, error
   }).then(callback)
     .catch(errorCallback)
 }
+
+export function uploadAssignmentScores(token, assignmentId, file, publicized, callback, errorCallback) {
+  let data = new FormData();
+  data.set("scores", file);
+  window.axios.post(getUrl("teacher/course/release/assignment/score"), data, {
+    headers: {
+      token
+    },
+    params: {
+      publicized,
+      assignmentId
+    }
+  }).then(callback)
+    .catch(errorCallback)
+}
