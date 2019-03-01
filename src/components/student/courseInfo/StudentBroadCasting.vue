@@ -4,7 +4,6 @@
     <el-card :body-style="{ padding: '5px', overflow: 'hidden'}">
       <div slot="header" style="height: 15px">
         <span style="float: left; font-weight: 800">最新公告</span>
-        <el-button style="float: right; padding: 1px 0" type="text" @click="displayEdit = true">新公告</el-button>
       </div>
       <el-container>
         <el-main>

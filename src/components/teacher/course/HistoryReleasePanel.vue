@@ -86,7 +86,7 @@
         this.$emit('close')
       },
       goToReleaseInfo(row) {
-        console.log(row);
+        this.$router.push("/teacher/course/" + row.courseId + "/" + row.id);
       }
     },
     created() {

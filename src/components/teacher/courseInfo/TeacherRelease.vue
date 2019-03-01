@@ -1,10 +1,11 @@
 <template>
   <div>
     <course-info v-bind="courseInfo" v-cloak></course-info>
-    <teacher-course-ware-list :course-id="parseInt($route.params['id'])" v-cloak></teacher-course-ware-list>
-    <release-panel :course-id="parseInt($route.params['id'])" v-cloak style="margin-bottom: 6px"></release-panel>
+    <teacher-broad-casting :release-id="parseInt($route.params['releaseId'])" v-cloak ></teacher-broad-casting>
+    <student-list :release-id="parseInt($route.params['releaseId'])" v-cloak></student-list>
+    <teacher-assignment-list :release-id="parseInt($route.params['releaseId'])" v-cloak></teacher-assignment-list>
     <forum-content></forum-content>
-  </div>
+    </div>
 </template>
 
 <script>
@@ -14,12 +15,10 @@
   import TeacherCourseWareList from "@/components/teacher/courseInfo/TeacherCourseWareList";
   import StudentList from "@/components/teacher/courseInfo/StudentList";
   import TeacherBroadCasting from "@/components/teacher/courseInfo/TeacherBroadCasting"
-  import HistoryReleasePanel from "@/components/teacher/course/HistoryReleasePanel";
-  import ReleasePanel from "@/components/teacher/course/ReleasePanel";
   import ForumContent from "@/components/forum/ForumContent";
 
   export default {
-    name: "TeacherCourse",
+    name: "TeacherRelease",
     data() {
       return {
         courseInfo: null
@@ -34,12 +33,12 @@
     methods: {
       getBasicInfo() {
         loadCourseBasicInfo(this.$store.getters.token, this.$route.params['id'],
-        res => {
-          this.courseInfo = res.data;
-        },
-        error => {
-          console.log(error.response)
-        })
+          res => {
+            this.courseInfo = res.data;
+          },
+          error => {
+            console.log(error.response)
+          })
       },
       init() {
         this.getBasicInfo()
@@ -47,8 +46,6 @@
     },
     components: {
       ForumContent,
-      ReleasePanel,
-      HistoryReleasePanel,
       StudentList,
       TeacherCourseWareList,
       CourseInfo, TeacherAssignmentList, TeacherBroadCasting

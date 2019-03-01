@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h2>主题区</h2>
     <poster-item-list v-bind="data" @change="changePage"></poster-item-list>
     <div class="createPoster" style="width: 600px; padding: 10px 30px 50px 30px; margin: 20px auto; background-color: aliceblue">
       <h2>发布新帖</h2>

@@ -3,10 +3,21 @@
     <course-info v-bind="courseInfo">
       <el-button type="danger" size="small" style="margin-top: 10px; margin-bottom: 10px" @click="quitVisible = true">退选</el-button>
     </course-info>
-    <classmate-list :release-id="parseInt($route.params['releaseId'])"></classmate-list>
-    <student-ware-list :course-id="parseInt($route.params['id'])"></student-ware-list>
-    <student-assignment-list :release-id="parseInt($route.params['releaseId'])"></student-assignment-list>
-    <student-broad-casting :release-id="parseInt($route.params['releaseId'])"></student-broad-casting>
+    <el-container>
+      <el-aside>
+        <student-assignment-list :release-id="parseInt($route.params['releaseId'])"></student-assignment-list>
+        <student-ware-list :course-id="parseInt($route.params['id'])"></student-ware-list>
+      </el-aside>
+      <el-main>
+        <student-broad-casting :release-id="parseInt($route.params['releaseId'])" style="float: right; width: 400px;top: -21px;position: relative;"></student-broad-casting>
+        <classmate-list :release-id="parseInt($route.params['releaseId'])" style="float: right; width: 201px;top: -21px;position: relative;"></classmate-list>
+      </el-main>
+    </el-container>
+
+
+    <div>
+      <forum-content></forum-content>
+    </div>
 
     <el-dialog title="警告" :visible.sync="quitVisible" width="20%">
       <span>确定要退选？</span>
@@ -26,11 +37,13 @@
   import StudentAssignmentList from "@/components/student/courseInfo/StudentAssignmentList";
   import {quitCourse} from "@/api/student/studentCourse";
   import StudentBroadCasting from "@/components/student/courseInfo/StudentBroadCasting";
+  import ForumContent from "@/components/forum/ForumContent";
 
   export default {
 
     name: "StudentCourse",
     components: {
+      ForumContent,
       StudentBroadCasting,
       StudentAssignmentList,
       CourseInfo, ClassmateList, StudentWareList

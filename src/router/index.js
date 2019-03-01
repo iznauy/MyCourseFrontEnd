@@ -20,6 +20,7 @@ import Poster from "@/components/forum/Poster";
 import StudentAvailableCourse from "@/components/student/course/StudentAvailableCourse";
 import TeacherCourse from "@/components/teacher/courseInfo/TeacherCourse";
 import StudentCourse from "@/components/student/courseInfo/StudentCourse";
+import TeacherRelease from "@/components/teacher/courseInfo/TeacherRelease";
 
 
 Vue.use(Router);
@@ -106,6 +107,10 @@ export default new Router({
         {
           path: 'course/:id',
           component: TeacherCourse
+        },
+        {
+          path: 'course/:id/:releaseId',
+          component: TeacherRelease
         },
         {
           path: 'info',
