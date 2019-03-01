@@ -1,7 +1,13 @@
 <template>
   <div>
     <course-info v-bind="courseInfo">
-      <el-button type="danger" size="small" style="margin-top: 10px; margin-bottom: 10px" @click="quitVisible = true">退选</el-button>
+      <div v-if="!courseScore.scored">
+        <el-button type="danger" size="small" style="margin-top: 10px; margin-bottom: 10px" @click="quitVisible = true">退选</el-button>
+      </div>
+      <div v-if="courseScore.scored">
+        <span style="font-size: 13px; margin-bottom: 10px">您的成绩：{{courseScore.score}}</span>
+        <el-button v-if="courseScore.publicized" style="margin-left: 10px; margin-top: 10px; margin-bottom: 10px" size="small" type="primary" @click="downloadScore">下载班级成绩</el-button>
+      </div>
     </course-info>
     <el-container>
       <el-aside>
@@ -35,9 +41,10 @@
   import StudentWareList from "@/components/student/courseInfo/StudentWareList";
   import {loadCourseBasicInfo} from "@/api/course";
   import StudentAssignmentList from "@/components/student/courseInfo/StudentAssignmentList";
-  import {quitCourse} from "@/api/student/studentCourse";
+  import {loadCourseScore, quitCourse} from "@/api/student/studentCourse";
   import StudentBroadCasting from "@/components/student/courseInfo/StudentBroadCasting";
   import ForumContent from "@/components/forum/ForumContent";
+  import {getUrl} from "@/api/tools/tool";
 
   export default {
 
@@ -51,7 +58,13 @@
     data() {
       return {
         courseInfo: null,
-        quitVisible: false
+        quitVisible: false,
+        courseScore: {
+          scored: false,
+          score: null,
+          publicized: false,
+          path: null
+        }
       }
     },
     created() {
@@ -67,7 +80,17 @@
             console.log(error.response)
           })
       },
+      getScoreInfo() {
+        loadCourseScore(this.$store.getters.token, this.$route.params['releaseId'],
+        res => {
+          this.courseScore = res.data;
+        },
+          error => {
+          console.log(error.response)
+        })
+      },
       init() {
+        this.getScoreInfo();
         this.getBasicInfo();
       },
       quit() {
@@ -79,6 +102,9 @@
         err => {
           this.$message.error("退选失败！");
         })
+      },
+      downloadScore() {
+        window.open(getUrl(this.courseScore.path), "__blank")
       }
     }
   }

@@ -21,6 +21,7 @@
           <el-input v-model="state['score']" type="number" :disabled="true" size="small"></el-input>
         </el-form-item>
         <el-form-item label-width="0px">
+          <el-button type="success" v-if="state.publicized" size="small" @click="downloadClassScore">班级成绩</el-button>
           <el-button type="success" v-if="committed" size="small" @click="download">下载</el-button>
           <el-button type="primary" size="small" @click="commitPanelVisible = true">提交</el-button>
         </el-form-item>
@@ -65,7 +66,9 @@
           path: "",
           scored: false,
           score: null,
-          upLoadTime: null
+          upLoadTime: null,
+          publicized: false,
+          classScorePath: null
         },
         commitPanelVisible: false
       }
@@ -123,6 +126,9 @@
       },
       download() {
         window.open(getUrl(this.state.path), "__blank")
+      },
+      downloadClassScore() {
+        window.open(getUrl(this.state.classScorePath), "__blank")
       }
     },
     created() {
