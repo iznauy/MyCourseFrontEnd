@@ -21,6 +21,7 @@ import StudentAvailableCourse from "@/components/student/course/StudentAvailable
 import TeacherCourse from "@/components/teacher/courseInfo/TeacherCourse";
 import StudentCourse from "@/components/student/courseInfo/StudentCourse";
 import TeacherRelease from "@/components/teacher/courseInfo/TeacherRelease";
+import AdminStatistics from "@/components/admin/statistics/AdminStatistics";
 
 
 Vue.use(Router);
@@ -152,7 +153,7 @@ export default new Router({
         },
         {
           path: 'statistics',
-          component: AdminCourse
+          component: AdminStatistics
         }
       ]
     },
