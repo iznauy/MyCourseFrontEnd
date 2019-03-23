@@ -56,7 +56,8 @@
     },
     methods: {
       toDetail() {
-        this.$router.push("/teacher/course/" + this.id);
+        if (this.approve && this.check)
+          this.$router.push("/teacher/course/" + this.id);
       }
     },
     components: {
