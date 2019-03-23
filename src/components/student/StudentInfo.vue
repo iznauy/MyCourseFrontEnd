@@ -50,7 +50,7 @@
       </span>
     </el-dialog>
 
-    <course-select-record></course-select-record>
+    <student-statistics></student-statistics>
 
   </div>
 </template>
@@ -58,15 +58,14 @@
 <script>
 
   import {getStudentInfo, changeStudentInfo, uploadAvatar} from "@/api/student/studentInfo";
-  import StudentStatistics from "@/components/student/StudentStatistics";
   import {getUrl} from "@/api/tools/tool";
-  import CourseSelectRecord from "@/components/student/statistics/CourseSelectRecords";
+  import StudentStatistics from "@/components/student/statistics/StudentStatistics";
 
   export default {
     name: "StudentInfo",
     components: {
-      CourseSelectRecord,
       StudentStatistics
+
     },
     data() {
       return {

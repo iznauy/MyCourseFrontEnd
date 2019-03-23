@@ -2,13 +2,14 @@
   <div>
     <el-table
       :data="records"
-      style="width: 100%"
-      ref="selectionTable">
+      ref="selectionTable"
+      style="width: 571px"
+      max-height="500">
       <el-table-column
         prop="operateTime"
         label="日期"
         sortable
-        width="180"
+        width="200"
         column-key="operateTime"
         :filters="operateTimeFilters"
         :filter-method="operateTimeFilterMethod">
@@ -17,7 +18,7 @@
         prop="courseName"
         label="课程名"
         sortable
-        width="180"
+        width="150"
         column-key="courseName"
         :filters="courseNameFilters"
         :filter-method="courseNameFilterMethod">
@@ -26,7 +27,7 @@
         prop="teacherName"
         label="教师名"
         sortable
-        width="180"
+        width="120"
         column-key="teacherName"
         :filters="teacherNameFilters"
         :filter-method="teacherNameFilterMethod">
@@ -112,7 +113,7 @@
         return row['teacherName'] === value;
       },
       selectStateFilterMethod(value, row) {
-        return true;
+        return row.select === value;
       }
     },
     created() {
