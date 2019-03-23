@@ -45,10 +45,13 @@
         <i v-else class="el-icon-plus avatar-uploader-icon"></i>
       </el-upload>
       <span slot="footer" class="dialog-footer">
-    <el-button @click="displayUpload = false">取 消</el-button>
-    <el-button type="primary" @click="handleUpload">确 定</el-button>
-  </span>
+        <el-button @click="displayUpload = false">取 消</el-button>
+        <el-button type="primary" @click="handleUpload">确 定</el-button>
+      </span>
     </el-dialog>
+
+    <course-select-record></course-select-record>
+
   </div>
 </template>
 
@@ -57,10 +60,12 @@
   import {getStudentInfo, changeStudentInfo, uploadAvatar} from "@/api/student/studentInfo";
   import StudentStatistics from "@/components/student/StudentStatistics";
   import {getUrl} from "@/api/tools/tool";
+  import CourseSelectRecord from "@/components/student/statistics/CourseSelectRecords";
 
   export default {
     name: "StudentInfo",
     components: {
+      CourseSelectRecord,
       StudentStatistics
     },
     data() {

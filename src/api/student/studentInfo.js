@@ -42,3 +42,12 @@ export function uploadAvatar(token, file, callback, errorCallback) {
     }).then(callback)
     .catch(errorCallback)
 }
+
+export function loadCourseSelectRecord(token, callback, errorCallback) {
+  window.axios.get(getUrl("student/selectRecord"), {
+    headers: {
+      token
+    }
+  }).then(callback)
+    .catch(errorCallback)
+}
